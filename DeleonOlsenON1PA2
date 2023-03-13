@@ -13,10 +13,18 @@ public class DeleonOlsenON1PA2
     private static int qtrCounter;
     private static int noOfQtrs;
 
+    /*a program that computes annual sales revenue to-date to determine
+     * the status of the company’s sales revenue and whether a year-end bonus is in store for the
+     * employees. Sales revenue is captured by month within a quarter; therefore, the user can enter as
+     * many quarters as needed as long as the quarters are not less than 1 or greater than 4. If sales
+     * revenue is on target by 50% or more for a sales rep, an encouraging message is sent; otherwise,
+     * a warning is sent. If sales revenue to date for the company is greater than or equal to 100% of
+     * projected annual sales, then employees qualify for a 2-5% year-end bonus; otherwise,
+     * no yearend bonus can be expected.
+     */
 
-    // Main method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) // Main method
+    { //begin scope
       double salesRevenue;
       double annualSales;
       double projectedSales;
@@ -32,37 +40,37 @@ public class DeleonOlsenON1PA2
 
 
 
-// Prompt for projected annual sales
-      System.out.print("What is the projected annual sales for Tandem? ");
-      while (!input.hasNextDouble())
+
+      System.out.print("What is the projected annual sales for Tandem? "); //Prompt 1
+      while (!input.hasNextDouble()) //validate for a floating point using a while loop.
       {
         input.next();
         System.out.print("NOT a valid floating-point! Please re-enter the projected sales for Tandem: ");
       }
-      projectedSales = input.nextDouble();
+      projectedSales = input.nextDouble(); //gather input for projectedSales
 
-      do
+      do //begin do-while loop.
       {
-        qtrCounter = 1;
-        quarterlySales = 0;
-        salesRepCtr++;
+        qtrCounter = 1; //Reinitialize qtrCounter to 1.
+        quarterlySales = 0; //Zero out quarterlySales.
+        salesRepCtr++; //Post-increment salesRepCtr.
 
-        promptSalesRep();
-        promptNoQtrs();
+        promptSalesRep(); //Call promptSalesRep().
+        promptNoQtrs(); // Call promptNoQtrs().
 
-        while(qtrCounter <= noOfQtrs)
+        while(qtrCounter <= noOfQtrs) //Nested while loop controls the number of quarters.
         {
-          monthCounter = 1;
-          chooseQtr();
+          monthCounter = 1; //Initialize monthCounter to 1.
+          chooseQtr(); //Call chooseQtr().
 
-          while(monthCounter <= determineMonthNo())
+          while(monthCounter <= determineMonthNo())//Nested, nested while loop controls the number of months within a quarter.
           {
-            determineMonthNo();
-            promptSalesRevenue();
-            quarterlySales += salesRevenue;
-            ++monthCounter;
+            determineMonthNo(); //Call determineMonthNo().
+            promptSalesRevenue(); //Call promptSalesRevenue().
+            quarterlySales += salesRevenue; //Use combined assignment operator to add salesRevenue to quarterlySales.
+            ++monthCounter;//Pre-increment monthCounter.
           }
 
-          annualSales += quarterlySales;
-          ++qtrCounter;
-          printSalesRevReport();
+          annualSales += quarterlySales; //Use combined assignment operator to add quarterlySales to annualSales.
+          ++qtrCounter; //. Pre-increment qtrCounter.
+          printSalesRevReport(); //Call printSalesRepRevReport().
