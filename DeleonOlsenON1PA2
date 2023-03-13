@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Calendar;
+
 
 public class DeleonOlsenON1PA2
 {
@@ -17,8 +17,17 @@ public class DeleonOlsenON1PA2
     // Main method
     public static void main(String[] args)
     {
-      public static double salesRevenue, annualSales, projectedSales, percOfTargetCo, percOfTargetRep;
-      public static int qtrChoice, monthCounter, noOfMonths, noSalesReps, salesRepCtr;
+      double salesRevenue;
+      double annualSales;
+      double projectedSales;
+      double percOfTargetCo;
+      double percOfTargetRep;
+      int qtrChoice;
+      int monthCounter;
+      int noOfMonths;
+      int noSalesReps;
+      int salesRepCtr;
+
 
 
 
@@ -31,4 +40,29 @@ public class DeleonOlsenON1PA2
         System.out.print("NOT a valid floating-point! Please re-enter the projected sales for Tandem: ");
       }
       projectedSales = input.nextDouble();
-//github edit test...
+
+      do
+      {
+        qtrCounter = 1;
+        quarterlySales = 0;
+        salesRepCtr++;
+
+        promptSalesRep();
+        promptNoQtrs();
+
+        while(qtrCounter <= noOfQtrs)
+        {
+          monthCounter = 1;
+          chooseQtr();
+
+          while(monthCounter <= determineMonthNo())
+          {
+            determineMonthNo();
+            promptSalesRevenue();
+            quarterlySales += salesRevenue;
+            ++monthCounter;
+          }
+
+          annualSales += quarterlySales;
+          ++qtrCounter;
+          printSalesRevReport();
