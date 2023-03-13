@@ -49,6 +49,15 @@ public class DeleonOlsenON1PA2
       }
       projectedSales = input.nextDouble(); //gather input for projectedSales
 
+      System.out.printf("%nHow many sales reps work for Tandem? "); //Prompt 2
+      while (!input.hasNextInt()) //validate for a integer using a while loop.
+      {
+        input.next();
+        System.out.printf("%nNOT a valid integer! Please re-enter the projected sales reps for Tandem: ");
+      }
+
+      noSalesReps = input.nextDouble(); //gather input for number of sales reps.
+
       do //begin do-while loop.
       {
         qtrCounter = 1; //Reinitialize qtrCounter to 1.
@@ -74,3 +83,4 @@ public class DeleonOlsenON1PA2
           annualSales += quarterlySales; //Use combined assignment operator to add quarterlySales to annualSales.
           ++qtrCounter; //. Pre-increment qtrCounter.
           printSalesRevReport(); //Call printSalesRepRevReport().
+          percOfTargetRep = quarterlySales / (projectedSales/noSalesReps);
