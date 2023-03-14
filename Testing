@@ -137,3 +137,26 @@ public class DeleonOlsenON1PA2
       }
       salesRep = rep.toString();
     }
+    public static void promptNoQtrs()
+    {
+      //prompt
+    }
+    public static int chooseQtr()
+    {
+      //declare local varibale
+      //prompt
+    }
+    public int determineMonthNo(int monthCounter)
+    {
+      //use switch
+    }
+    public static double promptSalesRevenue()
+    {
+      //declare local variable
+      //prompt
+    }
+    public static void printSalesRepRevReport()
+    {
+      //declare local varibale
+      //print final output
+    }
