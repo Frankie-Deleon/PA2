@@ -76,17 +76,9 @@ public class DeleonOlsenON1PA2
        if(noOfQtrs < 4) //if the noOfQtrs is less than 4
        {
                   
-        /*String firstName = salesRep.substring(0, salesRep.indexOf(' '));
+        String firstName = salesRep.substring(0, salesRep.indexOf(' '));
 
         String message = (percOfTargetRep >= 50) ? 
-        
-        "Keep up the GOOD work, " + firstName.substring(0, 1)
-        
-        .toUpperCase() + firstName.substring(1) + ". 
-        
-        There is a possible year-end bonus!\n" :                       
-        
-                            "Sales are lagging behind projections.\n"; System.out.println(message);
         
         
         /*Still need ternary operation to test if percOfTargetRep is greater than or equal to 50,
@@ -99,17 +91,16 @@ public class DeleonOlsenON1PA2
        {
          System.out.printf("%nSo far sales are lagging behind projections.%n");
        }
-       System.out.printf("%nCORPORATE SALES PERFORMANCE%n");
           /*Use a ternary operation within a printf() to test if percOfTargetCo is
            greater than or equal to 100, if it is print the message exactly as seen
            using the proper line advancing.
            */
 
-        /*System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far.
+        System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far.
             There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals. Thank you all and please
-             continue your excellent effort!\n" : "");*/
-       
-             System.out.printf("%nIt's been a GOOD year so far. There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!%n");
+             continue your excellent effort!\n" : ""));
+                            
+             /*System.out.printf("%nIt's been a GOOD year so far. There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!%n");*/
     }
     System.exit(0);
 
