@@ -40,7 +40,7 @@ public class DeleonOlsenON1PA2
       input.next();
       System.out.printf("%nNOT a valid integer! Please re-enter the projected sales reps for Tandem: ");
     }
-    noSalesReps = input.nextDouble(); //gather input for number of sales reps.
+    noSalesReps = input.nextInt(); //gather input for number of sales reps.
 
 
     do //begin do-while loop.
