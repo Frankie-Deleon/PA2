@@ -188,6 +188,11 @@ public class DeleonOlsenON1PA2
       //declare local variable
 
       //prompt
+      System.out.print("Enter the sales revenue for the " + monthNo + " month of the " + quarter + " Quarter: ");
+                  salesRevenue = input.nextDouble();
+                  quarterlySales += salesRevenue;
+                  noOfMonths++;
+
     }
     public static void printSalesRepRevReport()
     {
