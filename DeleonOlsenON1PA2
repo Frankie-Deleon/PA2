@@ -79,19 +79,22 @@ public class DeleonOlsenON1PA2
          if so print where the substring() grabs the first name and uppercases the first letter.
          Use the following message as the first value which will have no semicolon at the end.
          */
-         System.out.printf("%nKeep up the GOOD work, %s. " + "There is a possible year-end bonus!%n", salesRep.substring(0, salesRep.indexOf(' ')).substring(0, 1).toUpperCase() + salesRep.substring(1, salesRep.indexOf(' ')));
+         String.format("%nKeep up the GOOD work, %s. " + "There is a possible year-end bonus!%n", salesRep.substring(0, salesRep.indexOf(' ')).substring(0, 1).toUpperCase() + salesRep.substring(1, salesRep.indexOf(' ')))
        }
        else
        {
          System.out.printf("%nSo far sales are lagging behind projections.%n");
        }
-       System.out.printf("%nCORPORATE SALES PERFORMANCE%n");
+       percOfTargetCo = (annualSales/projectedSales) * 100 //calculate the percOfTargetCo which determines if the company will meet prjections for the year
+
           /*Use a ternary operation within a printf() to test if percOfTargetCo is
            greater than or equal to 100, if it is print the message exactly as seen
            using the proper line advancing.
            */
 
-       System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far. There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!\n" : "Sales are lagging projections. A year-end bonus may not be possible"));
+       System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far.
+                            There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals.
+                            Thank you all and please continue your excellent effort!\n");
 
     }
     System.exit(0);
