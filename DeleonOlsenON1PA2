@@ -92,9 +92,10 @@ public class DeleonOlsenON1PA2
            using the proper line advancing.
            */
 
-       System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far.
+      System.out.printf("CORPORATE SALES PERFORMANCE%n%s%n", (percOfTargetCo >= 100) ? "It's been a GOOD year so far.
                             There could be a year-end bonus of about 2-5% if we can keep on top of our sales goals.
-                            Thank you all and please continue your excellent effort!\n");
+                            Thank you all and please continue your excellent effort!\n" : 
+                            "Sales are lagging projections. A year-end bonus may not be possible."); 
 
     }
     System.exit(0);
