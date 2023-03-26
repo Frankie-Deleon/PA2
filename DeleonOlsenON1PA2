@@ -50,49 +50,53 @@
 
 
     System.out.printf("%nHow many sales reps work for Tandem? "); //Prompt 2
-    while (!input.hasNextInt()) //validate for a integer using a while loop.
+    while (!input.hasNextInt()) //By Frankie Deleon:  validate for a integer using a while loop.
     {
       input.next();
       System.out.printf("%nNOT a valid integer! Please re-enter the projected sales reps for Tandem: ");
     }
-    noSalesReps = input.nextInt(); //gather input for number of sales reps.
+    noSalesReps = input.nextInt(); //By Frankie Deleon:  gather input for number of sales reps.
 
 
-      do //begin do-while loop.
+      do //By Frankie Deleon:  begin the do-while loop.
       {
-        qtrCounter = 1; //Reinitialize qtrCounter to 1.
-        quarterlySales = 0.0; //Zero out quarterlySales.
-        salesRepCtr++; //Post-increment salesRepCtr.
+        qtrCounter = 1; //By Frankie Deleon:  Reinitialize qtrCounter to 1.
+        quarterlySales = 0.0; // By Frankie Deleon: Zero out quarterlySales.
+        salesRepCtr++; //By Frankie Deleon: Post-increment salesRepCtr.
 
-        promptSalesRep(salesRepCtr); //Call promptSalesRep().
-        promptNoQtrs(); // Call  promptNoQtrs().
+        promptSalesRep(salesRepCtr); //By Frankie Deleon: Call promptSalesRep().
+        promptNoQtrs(); //By Frankie Deleon:  Call  promptNoQtrs().
 
 
-        while(qtrCounter <= noOfQtrs) //Nested while loop controls the number of quarters.
+        while(qtrCounter <= noOfQtrs) //By Frankie Deleon: Nested while loop to control the number of quarters.
         {
 
-          monthCounter = 1; //Initialize monthCounter to 1.
-          qtrChoice = chooseQtr(); //Call chooseQtr().
+          monthCounter = 1; //By Frankie Deleon: Initialize monthCounter to 1.
+          qtrChoice = chooseQtr(); //By Frankie Deleon: Call chooseQtr().
 
           //
-          while(monthCounter <= noOfMonths)//Nested, nested while loop controls the number of months within a quarter.
+          while(monthCounter <= noOfMonths)//By Frankie Deleon: Nested, nested while loop controls the number of months within a quarter.
           {
-            determineMonthNo(monthCounter); //Call determineMonthNo().
-            salesRevenue = promptSalesRevenue(); //Call promptSalesRevenue().
-            quarterlySales += salesRevenue; //Use combined assignment operator to add salesRevenue to quarterlySales.
-            ++monthCounter;//Pre-increment monthCounter.
-          } //end of nested while loop
-          annualSales += quarterlySales; //Use combined assignment operator to add quarterlySales to annualSales.
-          ++qtrCounter; // Pre-increment qtrCounter.
-        } //end of nested while loop
+            determineMonthNo(monthCounter); //By Frankie Deleon: Call determineMonthNo().
+
+            salesRevenue = promptSalesRevenue(); //By Frankie Deleon: Call promptSalesRevenue().
+
+            quarterlySales += salesRevenue; //By Frankie Deleon: Use combined assignment operator to add salesRevenue to quarterlySales.
+
+            ++monthCounter;//By Frankie Deleon: Pre-increment monthCounter.
+
+          } //By Frankie Deleon: end of nested while loop
+          annualSales += quarterlySales; //By Frankie Deleon: Use combined assignment operator to add quarterlySales to annualSales.
+          ++qtrCounter; //By Frankie Deleon:  Pre-increment qtrCounter.
+        } //By Frankie Deleon: end of nested while loop
 
 
 
-         printSalesRepRevReport(); //Call printSalesRepRevReport().
+         printSalesRepRevReport(); //By Frankie Deleon: Call printSalesRepRevReport().
 
-         percOfTargetRep = quarterlySales / (projectedSales/noSalesReps)* 100; //Calculate the percOfTargetRep which determines whether the sales rep is on target for their portion of the projected sales.
+         percOfTargetRep = quarterlySales / (projectedSales/noSalesReps)* 100; //By Frankie Deleon: Calculate the percOfTargetRep which determines whether the sales rep is on target for their portion of the projected sales.
 
-       if(noOfQtrs < 4) //if the noOfQtrs is less than 4
+       if(noOfQtrs < 4) //By Frankie Deleon: if statement testing if the noOfQtrs is less than 4
        {
 
          System.out.printf(percOfTargetRep >= 50 ? String.format( "%nKeep up the GOOD work, %s. "
@@ -106,22 +110,34 @@
          if so print where the substring() grabs the first name and uppercases the first letter.
          Use the following message as the first value which will have no semicolon at the end.
          */
-       }//end if scope
+       }//By Frankie Deleon: end if scope
 
 
 
-      }
-      while (salesRepCtr < noSalesReps);//end do-while
+      }//By Frankie Deleon: End do Scope
+      while (salesRepCtr < noSalesReps);//By Frankie Deleon: end do-while
 
     percOfTargetCo = (annualSales/projectedSales)* 100;
-    //print 4
+
+    //By Frankie Deleon: print 4
     System.out.printf("CORPORATE SALES PERFORMANCE%n%n");
+
+    //By Frankie Deleon: ternary operation to test if percOfTargetCo is greater than or equal to 100, if true bring 'good year' message, if false print 'sales are lagging' message.
     System.out.printf(percOfTargetCo >= 100
                         ? "It's been a GOOD year so far. There could be a year-end bonus of about 2-5%% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!\n"
                         : "Sales are lagging projections. A year-end bonus may not be possible");
-    System.exit(0);
+
+    System.exit(0); //By Frankie Deleon:  Exit program
     }
+
     //======================================================================================
+    /*By Frankie Deleon:
+     * Static void method which returns nothing and accepts sakesRepCtr as a parameter.
+     * the promptSalesRep method asks the user to Enter the name of a, or the next sales rep using
+     * a ternary operation in a print statement.
+     * A for loop is used to count the number of blank spaces.
+     * Then the StringBuilder object was created to properly capitalize the sales rep's name.
+     */
     public static void promptSalesRep(int salesRepCtr)
     {
       int index;
@@ -153,9 +169,10 @@
 
       }
       //=============================================================================================
-      /*
-       *
-       *
+      /*By Frankie Deleon:
+       * Static void method which returns nothing with no parameters.
+       * The promptNoQtrs method asks the user to Enter the number of quarters worked.
+       * The input will be tested using a while validation loop to test if the value is an integer.
        */
       public static void promptNoQtrs()
       {
@@ -173,9 +190,12 @@
       }
       //======================================================================================
 
-     /*
-      *
-      *
+     /*By Frankie Deleon:
+      * Static integer type method which accepts no parameters and returns qtrChosen.
+      * The chooseQtr method will prompt the user with the quarters to choose from then ask to select
+      * the quarter in which sales were earned.
+      * A while input validation will be used to determine if the value was an integer, if not the prompt will be asked again.
+      * The method will return the qtrChosen.
       */
       public static int chooseQtr()
       {
@@ -212,9 +232,10 @@
 
       //======================================================================================
 
-     /*
-      *
-      *
+     /*By Frankie Deleon:
+      * Static void methos which retunrs nothing and accepts int monthCounter as a parameter.
+      * This method uses a switch statement with monthCounter as its argument.
+      * The switch will determine the month number using the monthCounter argument.
       */
       public static void determineMonthNo(int monthCounter)
       {
@@ -231,15 +252,15 @@
           case 3:
             monthNo = "3rd";
             break;
-          default:
-          monthNo = monthCounter + "th";
-          break;
         }
       }
       //======================================================================================
-      /*
-       *
-       *
+      /*By Frankie Deleon:
+       * Static double type method with no parameters, which will return salesRev.
+       * The method promptSalesRevenue will ask the user to enter the sales revenue for the month and quarter.
+       * A While validation loop is used to test whether the input is a valid floating-point.
+       * If false the user will be prompted again.
+       * The salesRev input gathered is returned.
        */
       public static double promptSalesRevenue()
       {
@@ -260,8 +281,9 @@
         return salesRev;
       }
       //======================================================================================
-      /*
-       *
+      /* void method which returns nothing, print SalesRepRevReport
+       * will print the final output which includes the header, Sales revenue,
+       * the sales rep, and Total Year-To-Date sales.
        */
       public static void printSalesRepRevReport()
       {
