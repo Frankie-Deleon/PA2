@@ -49,15 +49,13 @@
 
 
 
-      System.out.printf("%nHow many sales reps work for Tandem? "); //By Frankie Deleon:  Prompt 2 asking how many sales reps work for tandem.
-
-      while (!input.hasNextInt()) //By Frankie Deleon:  validate for a integer using a while loop.
-      {
-        input.next(); //By Frankie Deleon: Gather input
-        System.out.printf("%nNOT a valid integer! Please re-enter the projected sales reps for Tandem: ");
-      }
-
-      noSalesReps = input.nextInt(); //gather input for number of sales reps.
+    System.out.printf("%nHow many sales reps work for Tandem? "); //Prompt 2
+    while (!input.hasNextInt()) //validate for a integer using a while loop.
+    {
+      input.next();
+      System.out.printf("%nNOT a valid integer! Please re-enter the projected sales reps for Tandem: ");
+    }
+    noSalesReps = input.nextInt(); //gather input for number of sales reps.
 
 
       do //begin do-while loop.
@@ -94,46 +92,43 @@
 
          percOfTargetRep = quarterlySales / (projectedSales/noSalesReps)* 100; //Calculate the percOfTargetRep which determines whether the sales rep is on target for their portion of the projected sales.
 
-         if(noOfQtrs < 4) //if the noOfQtrs is less than 4
-         {
-                    /*ternary operation to test if percOfTargetRep is greater than or equal to 50,
-           if so print where the substring() grabs the first name and uppercases the first letter.
-           Use the following message as the first value which will have no semicolon at the end.
-           */
-           System.out.printf(percOfTargetRep >= 50 ? String.format( "%nKeep up the GOOD work, %s. "
-                               + "There is a possible year-end bonus!%n", salesRep.substring(0, salesRep.indexOf(' ')).substring(0, 1).toUpperCase()
-                               + salesRep.substring(1, salesRep.indexOf(' ')))
-                               : "%nSo far sales are lagging behind projections.%n");
-         }//end if scope
+       if(noOfQtrs < 4) //if the noOfQtrs is less than 4
+       {
+
+         System.out.printf(percOfTargetRep >= 50 ? String.format( "%nKeep up the GOOD work, %s. "
+                             + "There is a possible year-end bonus!%n", salesRep.substring(0, salesRep.indexOf(' ')).substring(0, 1).toUpperCase()
+                             + salesRep.substring(1, salesRep.indexOf(' ')))
+                             : "%nSo far sales are lagging behind projections.%n");
+
+          /**
+          * By John
+          * ternary operation to test if percOfTargetRep is greater than or equal to 50,
+         if so print where the substring() grabs the first name and uppercases the first letter.
+         Use the following message as the first value which will have no semicolon at the end.
+         */
+       }//end if scope
 
 
 
       }
       while (salesRepCtr < noSalesReps);//end do-while
 
-      percOfTargetCo = (annualSales/projectedSales)* 100;
-
-      //print 4
-      System.out.printf("%nCORPORATE SALES PERFORMANCE%n%n");
-      System.out.printf(percOfTargetCo >= 100
-                          ? "It's been a GOOD year so far. There could be a year-end bonus of about 2-5%% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!\n"
-                          : "Sales are lagging projections. A year-end bonus may not be possible");
-
-      System.exit(0);
-      }
-     /*
-     *
-     *
-     *
-     *
-     */
-      public static void promptSalesRep(int salesRepCtr)
-      {
-        int index;
-        int spaceCount = 0;
-        input.nextLine();
-        System.out.printf("%nEnter the name of %s sales rep: ", salesRepCtr == 1 ? "a" : "the next");
-        salesRep = input.nextLine();
+    percOfTargetCo = (annualSales/projectedSales)* 100;
+    //print 4
+    System.out.printf("CORPORATE SALES PERFORMANCE%n%n");
+    System.out.printf(percOfTargetCo >= 100
+                        ? "It's been a GOOD year so far. There could be a year-end bonus of about 2-5%% if we can keep on top of our sales goals. Thank you all and please continue your excellent effort!\n"
+                        : "Sales are lagging projections. A year-end bonus may not be possible");
+    System.exit(0);
+    }
+    //======================================================================================
+    public static void promptSalesRep(int salesRepCtr)
+    {
+      int index;
+      int spaceCount = 0;
+      input.nextLine();
+      System.out.printf("%nEnter the name of %s sales rep: ", salesRepCtr == 1 ? "a" : "the next");
+      salesRep = input.nextLine();
 
         for(char blank : salesRep.toCharArray())
         {
