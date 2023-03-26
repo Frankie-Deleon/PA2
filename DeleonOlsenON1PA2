@@ -232,7 +232,7 @@
           System.out.printf("%n2. Second Quarter");
           System.out.printf("%n3. Third Quarter");
           System.out.printf("%n4. Fourth Quarter");
-          System.out.printf("%n%nChoose the %squarter in which sales were earned: ", qtrCounter > 1 ? "next" : "");
+          System.out.printf("%n%nChoose the %squarter in which sales were earned: ", qtrCounter > 1 ? "next " : "");
         }
         qtrChosen= input.nextInt();
         quarter =(qtrChosen == 1) ? "First Quarter" : (qtrChosen == 2) ? "Second Quarter" : (qtrChosen == 3) ? "Third Quarter" : "Fourth Quarter";
