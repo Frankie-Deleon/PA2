@@ -115,7 +115,7 @@
                              : "%nSo far sales are lagging behind projections.%n");
 
           /**
-          * By John
+          * By John Olsen
           * ternary operation to test if percOfTargetRep is greater than or equal to 50,
          if so print where the substring() grabs the first name and uppercases the first letter.
          Use the following message as the first value which will have no semicolon at the end.
@@ -128,6 +128,8 @@
       while (salesRepCtr < noSalesReps);//By Frankie Deleon: end do-while
 
     percOfTargetCo = (annualSales/projectedSales)* 100;
+    /*By John Olsen Calculate the percOfTargetCo which determines whether or not the company is on track to hit projections or not
+    */
 
     //By Frankie Deleon: print 4
     System.out.printf("CORPORATE SALES PERFORMANCE%n%n");
@@ -142,33 +144,34 @@
 
     //======================================================================================
     /*By Frankie Deleon:
-     * Static void method which returns nothing and accepts sakesRepCtr as a parameter.
+     * Static void method which returns nothing and accepts salesRepCtr as a parameter.
      * the promptSalesRep method asks the user to Enter the name of a, or the next sales rep using
      * a ternary operation in a print statement.
      * A for loop is used to count the number of blank spaces.
      * Then the StringBuilder object was created to properly capitalize the sales rep's name.
      */
-    public static void promptSalesRep(int salesRepCtr)
+    public static void promptSalesRep(int salesRepCtr) //By John Olsen Static void method that accepts salesRepCtr as a parameter
     {
       int index;
-      int spaceCount = 0;
+      int spaceCount = 0; // By John Olsen initalize spaceCount
       input.nextLine();
-      System.out.printf("%nEnter the name of %s sales rep: ", salesRepCtr == 1 ? "a" : "the next");
+      System.out.printf("%nEnter the name of %s sales rep: ", salesRepCtr == 1 ? "a" : "the next"); // By John Olsen Enter the name of the salesRep
       salesRep = input.nextLine();
 
-        for(char blank : salesRep.toCharArray())
+        for(char blank : salesRep.toCharArray()) // By John Olsen for loop to store number of spaces in salesRep
         {
-          if(blank ==' ')
+          if(blank ==' ') // By John Olsen, if statement to check whether a variable named blank is equal to a space character
           {
 
-            spaceCount++;
+            spaceCount++; // By John Olsen increment operator for spaceCount
             }
         }
-        StringBuilder rep = new StringBuilder(salesRep);
-        rep.setCharAt(0, salesRep.toUpperCase().charAt(0));
-        index = salesRep.indexOf(' ');
+        StringBuilder rep = new StringBuilder(salesRep); //By John Olsen creates a new String Builder named rep and intializes it
+                                                        // with the contents of a String variable named salesRep
+        rep.setCharAt(0, salesRep.toUpperCase().charAt(0)); // By John Olsen Capitilize the the first letter of the salesRep name
+        index = salesRep.indexOf(' '); // By John Olsen returns index of the first character in salesRep
 
-        for(int i = 1; i <= spaceCount; i++)
+        for(int i = 1; i <= spaceCount; i++) // By John Olsen for loop to iterate through space characters in salesRep
         {
 
           rep.setCharAt(++index, salesRep.toUpperCase().charAt(index));
@@ -243,7 +246,7 @@
       //======================================================================================
 
      /*By Frankie Deleon:
-      * Static void methos which retunrs nothing and accepts int monthCounter as a parameter.
+      * Static void methods which returns nothing and accepts int monthCounter as a parameter.
       * This method uses a switch statement with monthCounter as its argument.
       * The switch will determine the month number using the monthCounter argument.
       */
@@ -274,20 +277,20 @@
        */
       public static double promptSalesRevenue()
       {
-        //declare local variable
-        double salesRev = 0.0;
+        
+        double salesRev = 0.0; // By John Olsen declare salesRev variable
 
-        //prompt
-        System.out.printf("%nEnter the sales revenue for the %s month of the %s: ", monthNo, quarter);
+        
+        System.out.printf("%nEnter the sales revenue for the %s month of the %s: ", monthNo, quarter);// By John Olsen ask user to input sales revenue for month and quarter
 
-        while(!input.hasNextDouble()) {
+        while(!input.hasNextDouble()) { // By John Olsen while loop to validate if the input is a valid floating point
           input.next();
-          System.out.printf("%nNOT a valid floating-point!%n");
-          System.out.printf("%nPlease re-enter the sales revenue for the %s month of the %s: ", monthNo, quarter);
+          System.out.printf("%nNOT a valid floating-point!%n"); // By John Olsen inform the user their input was not valid
+          System.out.printf("%nPlease re-enter the sales revenue for the %s month of the %s: ", monthNo, quarter); // By John Olsen prompt user again
 
         }
 
-        salesRev = input.nextDouble(); // gather input for salesRevenue double.
+        salesRev = input.nextDouble(); // By John Olsen gather input for salesRevenue double.
         return salesRev;
       }
       //======================================================================================
